@@ -1,0 +1,6 @@
+{
+    "vsicons.presets.angular": false,
+    "workbench.colorTheme": "Monokai",
+    "workbench.iconTheme": "vscode-icons",
+    "javascript.validate.enable": false
+}
