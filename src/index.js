@@ -6,11 +6,12 @@ import ReactDOM from 'react-dom'
 import createStore from './store'
 
 /** Routing */
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, Redirect, hashHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 /** Pages */
-import { HomePage } from 'pages'
+import Application from 'app'
+import { LandingPage } from 'pages'
 
 document.startApp = function (container) {
   const store = createStore()
@@ -19,7 +20,10 @@ document.startApp = function (container) {
   ReactDOM.render(
     <Provider store={store}>
       <Router history={history}>
-        <Route path='/' component={HomePage} />
+        <Redirect from='/' to='landingpage' />
+        <Route path='/' component={Application}>
+          <Route path='/landingpage' component={LandingPage} />
+        </Route>
       </Router>
     </Provider>,
     container

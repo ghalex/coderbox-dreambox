@@ -1,11 +1,55 @@
+
 BODY {
   font-family: "Open Sans";
   margin: 0px;
   box-sizing: border-box;
 }
-.page {
-  border: 1px solid #ececec;
-  margin: 20px auto;
-  max-width: 800px;
-  min-height: 400px;
+section.header {
+  position: relative;
+  min-height: 560px;
+  color: white;
+  background: radial-gradient(circle farthest-corner at right bottom, #FFD08A 0, #FFA376 28%, #D26578 52%, #682A84 79%, #241668 100%);
+  background: -webkit-radial-gradient(circle farthest-corner at right bottom, #FFD08A 0, #FFA376 28%, #D26578 52%, #682A84 79%, #241668 100%);
+}
+section.header .content {
+  position: relative;
+  max-width: 952px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+}
+section.header h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin: 0px;
+  text-rendering: optimizeLegibility;
+  text-shadow: rgba(0, 0, 0, 0.247059) 1.305px 2.54391px 5.08781px;
+}
+section.header img {
+  margin: 80px;
+}
+section.header [id^=header-curve] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+}
+section.header #header-curve-shadow {
+  display: block;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  mix-blend-mode: overlay;
+  opacity: 0.8;
+}
+section.clouds {
+  height: 350px;
+  margin-top: -280px;
+  background-image: url("/build/clouds.svg");
+  background-size: contain;
+  background-origin: padding-box;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
 }
