@@ -13,7 +13,7 @@ const LandingPage = () => {
 
       <section className='header'>
         <div className='content'>
-          <img src='/images/logo.png' width='120' />
+          <img src='/static/images/logo.png' width='120' />
           <h1 className='elegantshadow'>Dreambox</h1>
           <p>Articles, books, tutorials, jobs and meet-ups releated to your dream tech job.</p>
           <a href='#'>Write a Dreambox</a>

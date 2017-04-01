@@ -1,4 +1,4 @@
-import { handleActions, combineActions } from 'redux-actions'
+import { handleActions } from 'redux-actions'
 import { LOAD } from './constants'
 
 const initialState = {
