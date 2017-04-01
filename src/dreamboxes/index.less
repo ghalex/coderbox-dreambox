@@ -1,0 +1,111 @@
+// out: false
+
+.dreambox-list {
+  max-width: 952px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dreambox {
+
+  @color: #a74d7d;
+
+  width: 279px;
+  min-height: 300px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+  margin: 0px 10px 10px 0px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  text-align: center;
+  position: relative;
+  //background: url('/images/box-yellow.png') no-repeat;
+
+  .box-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 145px;
+    background-color: @color;
+    z-index: -1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 3px solid darken(@color, 10%);
+  }
+
+  .box-icon {
+    border-radius: 15px;
+    border: 5px solid;
+    margin-top: 20px;
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+
+  .box-avatar {
+    display: block;
+    margin: 15px auto 0px auto;
+    border-radius: 999px;
+    border: 2px solid darken(@color, 10%);
+  }
+
+  .box-name {
+    display: block;
+    margin: 6px auto -5px auto;
+    color: #CCC;
+    text-decoration: none;
+  }
+
+  .box-title {
+    display: block;
+    margin: 0px auto 5px auto;
+    color: #000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+    &:hover {
+      color: darken(@color, 10%);
+    }
+  }
+
+  .box-tags {
+    a { 
+      margin-right: 8px;
+      font-size: 13px;
+      color: #888;
+      text-transform: lowercase;
+    }
+  }
+
+  .box-btn {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 8px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: lighten(@color, 0%);
+  }
+}
+
+.category(@color) {
+  .box-bg { background-color: @color; border-bottom: 3px solid darken(@color, 10%); }
+  .box-avatar { border-color: darken(@color, 10%); }
+  .box-title:hover { color: darken(@color, 10%); }
+  .box-btn { background-color: @color; }
+}
+
+.dreambox.angular {
+  .category(#e15855);
+}
+
+.dreambox.react {
+  .category(#44aede);
+}
+
+.dreambox.ps {
+  .category(#4A66CC);
+}
+
+.dreambox.js {
+  .category(#fdd641);
+}
