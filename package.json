@@ -40,7 +40,8 @@
     "redux-thunk": "^2.2.0",
     "reselect": "^2.5.4",
     "superagent": "^3.5.2",
-    "vision": "^4.1.1"
+    "vision": "^4.1.1",
+    "pug": "^2.0.0-beta11"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -58,7 +59,6 @@
     "gulp-concat": "^2.6.1",
     "gulp-less": "^3.3.0",
     "gulp-standard": "^9.0.0",
-    "pug": "^2.0.0-beta11",
     "run-sequence": "^1.2.2",
     "standard": "^9.0.2",
     "vinyl-source-stream": "^1.1.0",
