@@ -1,14 +1,14 @@
 import request from 'superagent'
 import { createAction } from 'redux-actions'
-import * as constants from './constants'
+import { LOAD, SELECT_TITLE } from './constants'
 
-const pending = createAction(constants.LOAD.PENDING)
-const success = createAction(constants.LOAD.SUCCESS)
+const pending = createAction(LOAD.PENDING)
+const success = createAction(LOAD.SUCCESS)
 
 const fetch = () => {
   return new Promise((resolve, reject) => {
     request
-      .get('http://dev.coderbox.me/api/dreamboxes')
+      .get('https://www.coderbox.me/api/dreamboxes')
       .set('content-type', 'application/json')
       .end(
         (error, result) => {
@@ -29,3 +29,5 @@ export const load = () => {
     dispatch(success(boxes))
   }
 }
+
+export const selectTitle = createAction(SELECT_TITLE)

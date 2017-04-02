@@ -1,9 +1,10 @@
 import { handleActions } from 'redux-actions'
-import { LOAD } from './constants'
+import { LOAD, SELECT_TITLE } from './constants'
 
 const initialState = {
   'isFetching': false,
-  'items': []
+  'items': [],
+  'selectedTitle': null
 }
 
 const reducer = handleActions({
@@ -19,6 +20,13 @@ const reducer = handleActions({
       ...state,
       'isFetching': false,
       'items': action.payload
+    }
+  },
+
+  [SELECT_TITLE]: (state, action) => {
+    return {
+      ...state,
+      'selectedTitle': action.payload
     }
   }
 }, initialState)

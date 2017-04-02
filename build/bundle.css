@@ -5,9 +5,7 @@ BODY {
   box-sizing: border-box;
 }
 nav {
-  position: fixed;
   width: 100%;
-  z-index: 10;
 }
 nav > div {
   margin: auto;
@@ -34,36 +32,36 @@ nav > div a.special::after {
     display: none;
   }
 }
-section.header {
+header {
   position: relative;
   min-height: 500px;
   color: white;
   background: radial-gradient(circle farthest-corner at right bottom, #FFD08A 0, #FFA376 28%, #D26578 52%, #682A84 79%, #241668 100%);
   background: -webkit-radial-gradient(circle farthest-corner at right bottom, #FFD08A 0, #FFA376 28%, #D26578 52%, #682A84 79%, #241668 100%);
 }
-section.header .content {
+header .content {
   position: relative;
   max-width: 952px;
-  margin: 0 auto;
-  padding: 40px;
+  margin: auto;
+  padding: 40px 40px 80px 40px;
   text-align: center;
 }
-section.header h1 {
+header .content h1 {
   font-size: 60px;
   font-weight: 700;
   margin: 0px;
   text-rendering: optimizeLegibility;
   text-shadow: rgba(0, 0, 0, 0.247059) 1.305px 2.54391px 5.08781px;
 }
-section.header p {
+header .content p {
   margin: auto;
   max-width: 350px;
   text-align: center;
 }
-section.header img {
+header .content img {
   margin: 10px 80px;
 }
-section.header a {
+header .content a {
   display: inline-block;
   background: linear-gradient(-180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.75));
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.35);
@@ -75,22 +73,44 @@ section.header a {
   margin-top: 40px;
   font-weight: 400;
 }
-section.header a:hover {
+header .content a:hover {
   opacity: 0.8;
 }
-section.header [id^=header-curve] {
+header svg {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 110px;
 }
-section.header #header-curve-shadow {
+header svg.shadow {
   display: block;
   -webkit-filter: blur(10px);
   filter: blur(10px);
   mix-blend-mode: overlay;
   opacity: 0.8;
+}
+footer {
+  font-size: 18px;
+  min-height: 60px;
+  background: #44aede;
+  position: relative;
+  margin: 100px 0px 0px 0px;
+  border-top: 3px solid #1c77a0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-rendering: optimizeLegibility;
+}
+footer img {
+  margin: 0px 10px;
+}
+footer svg {
+  position: absolute;
+  top: -100px;
+  fill: #a74d7d;
 }
 canvas {
   position: absolute;
@@ -101,7 +121,41 @@ canvas {
   z-index: 1;
   opacity: 0.85;
 }
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: darkgray;
+  outline: 1px solid slategrey;
+}
 
+.filters {
+  max-width: 952px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+}
+.filters .filter-bytitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.filters .filter-bytitle label {
+  margin: 0px 5px;
+}
+.filters .filter-bytitle input {
+  width: 240px;
+  font-size: 14px;
+  outline: none;
+  padding: 10px;
+  border: 1px solid #dadada;
+  box-shadow: 0 1px 2px rgba(12, 13, 14, 0.1) inset;
+  border-radius: 5px;
+}
 .dreambox-list {
   max-width: 952px;
   margin: 20px auto;
@@ -231,6 +285,53 @@ canvas {
     width: 100%;
     margin: 10px 20px;
   }
+}
+
+.react-autosuggest__container {
+  position: relative;
+}
+.react-autosuggest__suggestions-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  margin-top: 2px;
+  border: 1px solid #dadada;
+  background: white;
+  font-size: 14px;
+  display: none;
+  border-radius: 5px;
+}
+.react-autosuggest__suggestions-container .suggestion-logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.react-autosuggest__container--open .react-autosuggest__suggestions-container {
+  display: block;
+}
+.react-autosuggest__suggestions-list {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  margin-bottom: 0px;
+}
+.react-autosuggest__suggestion {
+  background: #f9f9f9;
+  padding: 8px 12px;
+  border-bottom: 1px solid #DADADA;
+}
+.react-autosuggest__suggestion:last-child {
+  border: 0px solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.react-autosuggest__suggestion--focused,
+.react-autosuggest__suggestion--highlighted {
+  background: #E0E7F1;
 }
 
 .spinner-overlay {

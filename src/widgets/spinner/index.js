@@ -3,11 +3,16 @@ import Spinner from 'react-spinkit'
 
 class SpinnerOverlay extends React.Component {
   render () {
-    var display = this.props.show ? 'flex' : 'none'
+    const display = this.props.show ? 'flex' : 'none'
+    const style = {
+      width: 60,
+      height: 60,
+      marginBottom: 20
+    }
 
     return (
       <div className='spinner-overlay' style={{ display: display }}>
-        <Spinner spinnerName={this.props.name} noFadeIn />
+        <Spinner spinnerName={this.props.name} noFadeIn style={style} />
         <label>Loading...</label>
       </div>
     )
